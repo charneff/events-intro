@@ -3,44 +3,47 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log("The page is loaded!")
     const commentForm = document.getElementById('comment-form')
-    const commentsContainer = document.getElementById('comments-container')
+    const commentsContainer = document.querySelector('#comments-container')
     commentForm.addEventListener('submit', function(event) {
         event.preventDefault()
-        console.log(event.target)
-        const userInputField = event.target.querySelector('#new-comment')
-        const userInputString = userInputField.value
-        console.log(userInputString)
-        const PTag = document.createElement('p')
-        PTag.textContent = userInputString
-        commentsContainer.appendChild(PTag)
+        console.log("The button was clicked")
+        console.log(event)
+        const userInputField = event.target.querySelector("#new-comment")
+        const userInput = userInputField.value
+        // const pTag = document.createElement('p')
+        // pTag.textContent = userInput
+        // commentsContainer.appendChild(pTag)
+        commentsContainer.innerHTML += `<p>${userInput}</p>`
         userInputField.value = ""
     })
-    const helicopterNode = document.getElementById('helicopter-parent')
-    helicopterNode.addEventListener('click', function (event) {
-        console.log(event.target)
-        if (event.target.dataset.name === "alert"){
-            window.alert('HI')
-        } else if (event.target.dataset.name === "log"){
-            window.alert('LOG')
-        } else if (event.target.dataset.name === "error"){
-            window.alert('ERROR')
-        }
-    })
 
+    const helicopterNode = document.getElementById('helicopter-parent')
+    helicopterNode.addEventListener('click', () => {
+        console.log(event.target)
+        if (event.target.dataset.name === 'alert'){
+            window.alert("Hi from alert!")
+        }
+        else if (event.target.dataset.name === 'log'){
+            console.log("Hi from log!")
+        }
+        else if (event.target.dataset.name === 'error'){
+            console.log("Hi from error")
+        }
+
+    })
+  
     const firstHeader = document.querySelector('h3')
     firstHeader.addEventListener('click', handleOnClick)
   })
 
-
-
-
- function handleOnClick (){
+ function handleOnClick () {
     console.log("BUTTON WAS CLICKED!")
 }
 
 function someFunc() {
-    console.log("inside someFunc")
+    console.log("inside some func")
 }
+
 
 //OR
 
