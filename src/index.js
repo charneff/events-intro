@@ -35,7 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
  function handleOnClick (){
-    console.log("BUTTON WAS CLICKED!")} 
+    console.log("BUTTON WAS CLICKED!")
+}
+
+function someFunc() {
+    console.log("inside someFunc")
+}
 
 //OR
 
